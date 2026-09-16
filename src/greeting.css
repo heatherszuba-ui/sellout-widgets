@@ -12,6 +12,10 @@
 
 * { box-sizing: border-box; }
 
+/* Match the embedding page's colour scheme so the browser does not paint an
+   opaque backdrop behind the iframe (white box behind the rounded corners). */
+html { color-scheme: light dark; }
+
 html, body {
   margin: 0;
   height: 100%;

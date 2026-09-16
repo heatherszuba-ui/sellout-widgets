@@ -12,6 +12,7 @@ export const RACES = {
   breaking3: {
     key: "breaking3",
     name: "Breaking 3",
+    displayName: "BREAKING 3",
     cap: 300,
     currentLabel: "2027",
     priorLabel: "2026",
@@ -22,6 +23,7 @@ export const RACES = {
   microtq: {
     key: "microtq",
     name: "micrOTQ",
+    displayName: "micrOTQ",
     cap: 300,
     currentLabel: "2027",
     priorLabel: "2026",

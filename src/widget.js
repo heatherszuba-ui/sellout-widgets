@@ -57,7 +57,7 @@ export class SellOutWidget {
     this.root.innerHTML = `
       <div class="sw" data-status="${status}">
         <header class="sw__head">
-          <div class="sw__race">${esc(this.race.name)}</div>
+          <div class="sw__race">${esc(this.race.displayName ?? this.race.name)}</div>
           <div class="sw__status">
             <span class="sw__dot"></span>
             <span class="sw__status-label">${esc(p.statusLabel)}</span>
@@ -96,7 +96,7 @@ export class SellOutWidget {
     this.root.innerHTML = `
       <div class="sw" data-status="none">
         <header class="sw__head">
-          <div class="sw__race">${esc(this.race.name)}</div>
+          <div class="sw__race">${esc(this.race.displayName ?? this.race.name)}</div>
         </header>
         <div class="sw__hero">
           <div class="sw__hero-item">
