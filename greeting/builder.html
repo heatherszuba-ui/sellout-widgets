@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <title>Greeting Clock — Set up yours</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #1e2426; --ink: #f6f0da; --gold: #e0b832;
+      --page: #15191a; --field: #262e2f; --line: rgba(246,240,218,0.14);
+      --font: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; background: var(--page); color: var(--ink);
+      font-family: var(--font); -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 32px 20px 60px; }
+    h1 { font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; margin: 0 0 6px; }
+    .sub { font-size: 12px; opacity: 0.6; margin: 0 0 28px; line-height: 1.6; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: start; }
+    @media (max-width: 760px) { .grid { grid-template-columns: 1fr; } }
+
+    .panel { background: var(--bg); border-radius: 16px; padding: 22px 24px; }
+    .label { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.6; margin: 18px 0 8px; }
+    .label:first-child { margin-top: 0; }
+    input[type="text"], select {
+      width: 100%; background: var(--field); color: var(--ink); border: 1px solid var(--line);
+      border-radius: 8px; padding: 10px 12px; font: inherit; font-size: 14px; outline: none;
+    }
+    input[type="text"]:focus, select:focus { border-color: var(--gold); }
+    .slot { display: grid; grid-template-columns: 1fr 120px; gap: 10px; margin-bottom: 10px; }
+    .hint { font-size: 10px; opacity: 0.5; letter-spacing: 0.06em; margin-top: 6px; }
+
+    .preview { position: sticky; top: 20px; }
+    .frame { width: 100%; height: 250px; border: 0; border-radius: 16px; background: transparent; display: block; }
+
+    .linkbox { display: flex; gap: 8px; margin-top: 12px; }
+    .linkbox input { flex: 1; font-size: 11px; opacity: 0.8; }
+    button {
+      background: var(--gold); color: #1e2426; border: 0; border-radius: 8px;
+      padding: 10px 16px; font: inherit; font-size: 12px; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; white-space: nowrap;
+    }
+    button.ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+    .copied { color: var(--gold); font-size: 11px; letter-spacing: 0.08em; margin-left: 10px; opacity: 0; transition: opacity 200ms; }
+    .copied.on { opacity: 1; }
+
+    ol { padding-left: 18px; font-size: 12px; line-height: 1.7; opacity: 0.8; margin: 10px 0 0; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Greeting clock — set up yours</h1>
+    <p class="sub">Type your name and greetings, copy the link, paste it into your dashboard. That's the whole job.</p>
+
+    <div class="grid">
+      <form class="panel" id="form" autocomplete="off">
+        <div class="label">First name</div>
+        <input type="text" id="name" maxlength="20" placeholder="Leave blank for no name" />
+
+        <div class="label">Greetings and when they start</div>
+        <div id="slots"></div>
+        <div class="hint">Up to 24 characters each. Each greeting shows from its start hour until the next one begins.</div>
+
+        <div class="label">Your link</div>
+        <div class="linkbox">
+          <input type="text" id="link" readonly />
+          <button type="button" id="copy">Copy link</button>
+        </div>
+        <span class="copied" id="copied">Copied</span>
+
+        <div class="label">Then, in Notion</div>
+        <ol>
+          <li>Open your personal dashboard.</li>
+          <li>Type <code>/embed</code> where the clock should go and press Enter.</li>
+          <li>Paste the link and click Embed link.</li>
+        </ol>
+
+        <div style="margin-top:18px"><button type="button" class="ghost" id="reset">Reset to defaults</button></div>
+      </form>
+
+      <div class="preview">
+        <div class="label">Preview</div>
+        <iframe class="frame" id="frame" title="Preview"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { GreetingConfig, GREETING_DEFAULTS, MAX_GREETING_LENGTH } from "../src/greeting.js";
+
+    const $ = (id) => document.getElementById(id);
+    const widgetUrl = new URL("./index.html", location.href);
+
+    const HOURS = Array.from({ length: 24 }, (_, h) => {
+      const label = `${h % 12 || 12}:00 ${h >= 12 ? "PM" : "AM"}`;
+      return `<option value="${h}">${label}</option>`;
+    }).join("");
+
+    $("slots").innerHTML = [1, 2, 3, 4].map((i) => `
+      <div class="slot">
+        <input type="text" id="g${i}" maxlength="${MAX_GREETING_LENGTH}" placeholder="Greeting ${i}" />
+        <select id="h${i}">${HOURS}</select>
+      </div>`).join("");
+
+    function readForm() {
+      return new GreetingConfig({
+        name: $("name").value,
+        slots: [1, 2, 3, 4].map((i) => ({ text: $(`g${i}`).value, hour: $(`h${i}`).value })),
+      });
+    }
+
+    function writeForm(cfg) {
+      $("name").value = cfg.name;
+      cfg.slots.forEach((s, i) => {
+        $(`g${i + 1}`).value = s.text;
+        $(`h${i + 1}`).value = String(s.hour);
+      });
+    }
+
+    function update() {
+      const cfg = readForm();
+      const url = `${widgetUrl.href}?${cfg.toSearch()}`;
+      $("link").value = url;
+      if ($("frame").dataset.url !== url) {
+        $("frame").dataset.url = url;
+        $("frame").src = url;
+      }
+    }
+
+    // Start from the link's own params if someone opens builder.html?name=…
+    writeForm(GreetingConfig.fromSearch(location.search));
+    update();
+
+    $("form").addEventListener("input", update);
+    $("form").addEventListener("change", update);
+
+    $("reset").addEventListener("click", () => {
+      writeForm(new GreetingConfig(GREETING_DEFAULTS));
+      update();
+    });
+
+    $("copy").addEventListener("click", async () => {
+      const link = $("link");
+      try {
+        await navigator.clipboard.writeText(link.value);
+      } catch {
+        link.select();
+        document.execCommand("copy");
+      }
+      $("copied").classList.add("on");
+      setTimeout(() => $("copied").classList.remove("on"), 1600);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+/* Greeting clock — same card language as the sell-out widget. */
+
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap");
+
+:root {
+  --bg: #1e2426;
+  --ink: #f6f0da;
+  --gold: #e0b832;
+  --font: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --radius: 16px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: transparent;
+}
+
+#app {
+  height: 100%;
+  padding: 6px;
+  container-type: inline-size;
+}
+
+.gc {
+  height: 100%;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 20px 24px 22px;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font);
+  border-radius: var(--radius);
+  -webkit-font-smoothing: antialiased;
+}
+
+.gc__head { display: flex; align-items: center; }
+
+.gc__logo {
+  height: 30px;
+  width: auto;
+  display: block;
+}
+
+.gc__greeting {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.75;
+  margin-top: auto;
+}
+
+.gc__time {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.gc__digits {
+  font-size: 56px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.gc__period {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  opacity: 0.6;
+}
+
+@container (max-width: 360px) {
+  .gc__digits { font-size: 44px; }
+  .gc__logo { height: 26px; }
+}

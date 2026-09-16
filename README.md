@@ -82,6 +82,21 @@ Add an entry to `RACES` in `src/config.js` with the race's Notion projection
 database id, share that database with the integration, push. The Action picks
 it up on the next run and `?race=<key>` works.
 
+## Greeting clock
+
+Second widget in the same look: The Micro logo, a time-of-day greeting, and
+a ticking 12-hour clock. Teammates set it up at
+
+```
+https://<your-github-user>.github.io/sellout-widgets/greeting/builder.html
+```
+
+which produces a link like `greeting/?name=Sammy&g1=…&h1=5&g2=…&h2=12…`
+to paste into `/embed`. Only the name, the four greeting texts, and their
+start hours are configurable; everything else is fixed in `src/greeting.css`.
+Logic lives in `src/greeting.js` (`GreetingConfig`, `GreetingClock`); tests in
+`test/greeting.test.mjs`.
+
 ## Local
 
 ```

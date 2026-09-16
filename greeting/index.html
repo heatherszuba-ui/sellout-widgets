@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <title>Greeting Clock</title>
+  <link rel="stylesheet" href="../src/greeting.css" />
+</head>
+<body>
+  <div id="app"></div>
+  <script type="module">
+    import { GreetingClock, GreetingConfig } from "../src/greeting.js";
+
+    new GreetingClock(document.getElementById("app"), {
+      config: GreetingConfig.fromSearch(location.search),
+      logoSrc: "../assets/the-micro-logo-horizontal-gold.png",
+    }).start();
+  </script>
+</body>
+</html>
