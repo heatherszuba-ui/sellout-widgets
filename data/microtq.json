@@ -1,0 +1,49 @@
+{
+  "race": "microtq",
+  "fetchedAt": "2026-09-16T17:30:00.000Z",
+  "source": "notion:3d957119b44081529a8ffa6b310f6e99",
+  "metrics": {
+    "registered": {
+      "metric": "Registered now",
+      "value": 68,
+      "display": "68 of 300",
+      "detail": "Day 47 of 240 in the 2027 window."
+    },
+    "percent": {
+      "metric": "Field filled",
+      "value": 0.22666666666666666,
+      "display": "22.7%",
+      "detail": "232 places remaining against the 300 budget cap. Internal cap is 350 for no-show headroom; fill rate is deliberately tracked against 300."
+    },
+    "pace": {
+      "metric": "Pace vs 2026",
+      "value": 2.72,
+      "display": "2.72x",
+      "detail": "68 at day 47 in 2027 against 25 at day 47 in 2026."
+    },
+    "threshold": {
+      "metric": "Pace needed for 300",
+      "value": 2.94,
+      "display": "2.94x",
+      "detail": "300 against 2026's final 102. No cap distorted that number, so this threshold is exact rather than a floor."
+    },
+    "projected_cap": {
+      "metric": "Projected to hit 300",
+      "value": 0,
+      "display": "Not on current pace",
+      "detail": "At 2.72x, 2026's curve projects 277 — short of 300. Needs 2.94x. Evidence ends at day 216."
+    },
+    "projected_race_day": {
+      "metric": "Projected field on race day",
+      "value": 277,
+      "display": "277 of 300",
+      "detail": "2026's 102 scaled by the current 2.72x pace, capped at 300. Held flat past day 216 rather than extrapolated, so this is a floor."
+    },
+    "prior_outcome": {
+      "metric": "2026 outcome",
+      "value": 102,
+      "display": "102 on race day — did not sell out",
+      "detail": "Registration ran the full window and closed at 102. Nothing truncated the curve, so it is genuine demand end to end — a cleaner baseline than a year that hit its cap."
+    }
+  }
+}

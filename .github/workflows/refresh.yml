@@ -1,0 +1,47 @@
+name: Refresh projection data
+
+on:
+  schedule:
+    # Hourly at :20 UTC. The Notion sync itself runs daily, so this mostly
+    # picks up the same numbers; hourly just keeps the lag short.
+    - cron: "20 * * * *"
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths:
+      - "scripts/**"
+      - "src/config.js"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Fetch projections from Notion
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+        run: node scripts/fetch-projections.mjs
+
+      - name: Commit updated data
+        run: |
+          git config user.name "sellout-widgets bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/*.json
+          if git diff --cached --quiet; then
+            echo "No data changes."
+          else
+            git commit -m "data: refresh projections $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git push
+          fi

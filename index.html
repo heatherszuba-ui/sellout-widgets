@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <title>Sell-Out Projection</title>
+  <link rel="stylesheet" href="src/widget.css" />
+</head>
+<body>
+  <div id="app"></div>
+  <script type="module">
+    import { getRace } from "./src/config.js";
+    import { Theme } from "./src/theme.js";
+    import { SellOutWidget } from "./src/widget.js";
+
+    const params = new URLSearchParams(location.search);
+    const raceKey = params.get("race") ?? "breaking3";
+    const root = document.getElementById("app");
+
+    try {
+      const widget = new SellOutWidget(root, {
+        race: getRace(raceKey),
+        theme: Theme.fromSearch(location.search),
+      });
+      widget.load();
+    } catch (err) {
+      root.innerHTML = `<div class="sw" data-status="none"><div class="sw__race">${err.message}</div></div>`;
+    }
+  </script>
+</body>
+</html>

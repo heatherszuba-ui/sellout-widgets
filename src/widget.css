@@ -1,0 +1,162 @@
+/* Sell-out widget — flat card, one ink colour, status dot is the only accent.
+   Mirrors the mindfulwidgets countdown: no border, no shadow, IBM Plex Mono,
+   uppercase tracked labels, light-weight big numerals. */
+
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=Inter:wght@400;500;700&display=swap");
+
+:root {
+  --bg: #1e2426;
+  --ink: #f6f0da;
+  --font: "IBM Plex Mono", ui-monospace, monospace;
+  --radius: 16px;
+  --green: #4ade80;
+  --yellow: #facc15;
+  --red: #f87171;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: transparent;
+}
+
+#app {
+  height: 100%;
+  padding: 6px;
+}
+
+.sw {
+  height: 100%;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 22px 24px 18px;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font);
+  border-radius: var(--radius);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* header */
+.sw__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sw__race {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  /* no text-transform: keeps brand casing ("micrOTQ") */
+}
+
+.sw__status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.sw__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.35;
+}
+.sw[data-status="green"]  .sw__dot { background: var(--green);  opacity: 1; box-shadow: 0 0 0 4px color-mix(in srgb, var(--green) 22%, transparent); }
+.sw[data-status="yellow"] .sw__dot { background: var(--yellow); opacity: 1; box-shadow: 0 0 0 4px color-mix(in srgb, var(--yellow) 22%, transparent); }
+.sw[data-status="red"]    .sw__dot { background: var(--red);    opacity: 1; box-shadow: 0 0 0 4px color-mix(in srgb, var(--red) 22%, transparent); }
+
+/* hero: registrants and % full, equal weight */
+.sw__hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.sw__big {
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.sw__big--muted { opacity: 0.4; }
+
+.sw__hero-label {
+  margin-top: 8px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+/* progress bar */
+.sw__bar {
+  height: 4px;
+  border-radius: 2px;
+  background: color-mix(in srgb, var(--ink) 16%, transparent);
+  overflow: hidden;
+}
+.sw__bar-fill {
+  height: 100%;
+  background: var(--ink);
+  opacity: 0.9;
+  border-radius: 2px;
+  transition: width 400ms ease;
+}
+.sw[data-status="green"]  .sw__bar-fill { background: var(--green); }
+.sw[data-status="yellow"] .sw__bar-fill { background: var(--yellow); }
+.sw[data-status="red"]    .sw__bar-fill { background: var(--red); }
+
+/* stats row */
+.sw__stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.sw__stat-value {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.sw__stat-label {
+  margin-top: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+/* footer */
+.sw__foot {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+/* narrow embeds */
+@container (max-width: 340px) {
+  .sw__big { font-size: 40px; }
+  .sw__stat-value { font-size: 17px; }
+}
+#app { container-type: inline-size; }
