@@ -23,7 +23,7 @@ html { color-scheme: light dark; }
 html, body {
   margin: 0;
   height: 100%;
-  background: transparent;
+  background: var(--frame, transparent); /* see src/frame.js */
 }
 
 #app {

@@ -14,6 +14,9 @@
     import { getRace } from "./src/config.js";
     import { Theme } from "./src/theme.js";
     import { SellOutWidget } from "./src/widget.js";
+    import { applyFrame } from "./src/frame.js";
+
+    applyFrame(location.search);
 
     const params = new URLSearchParams(location.search);
     const raceKey = params.get("race") ?? "breaking3";

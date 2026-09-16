@@ -12,6 +12,9 @@
   <div id="app"></div>
   <script type="module">
     import { GreetingClock, GreetingConfig } from "../src/greeting.js";
+    import { applyFrame } from "../src/frame.js";
+
+    applyFrame(location.search);
 
     new GreetingClock(document.getElementById("app"), {
       config: GreetingConfig.fromSearch(location.search),

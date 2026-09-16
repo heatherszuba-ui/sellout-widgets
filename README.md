@@ -76,6 +76,14 @@ Same idea as mindfulwidgets. Any of these can be added to the embed URL:
 `color` background, `ink` text, `font` mono|sans, `corners` 1|0, plus
 `green`, `yellow`, `red` for the status dot.
 
+## Embedding inside a coloured callout
+
+Notion paints its page background over every embed frame, which shows as a
+box behind the card's rounded corners when the embed sits in a coloured
+callout. Add `&frame=green` (Notion's green callout) or `&frame=<hex>` to the
+embed URL and the widget paints its own margin to match. Leave it off for
+embeds on the plain page. See `src/frame.js`.
+
 ## Adding a race
 
 Add an entry to `RACES` in `src/config.js` with the race's Notion projection

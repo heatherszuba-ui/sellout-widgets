@@ -92,3 +92,12 @@ test("theme accepts mindfulwidgets-style params and rejects junk", () => {
   assert.equal(t.green, "4ade80"); // junk ignored, default kept
   assert.equal(t.cssVars()["--radius"], "0px");
 });
+
+test("frame colour: preset follows scheme, hex is literal, junk is transparent", async () => {
+  const { frameColor } = await import("../src/frame.js");
+  assert.equal(frameColor("green", false), "#263d30");
+  assert.equal(frameColor("green", true), "#edf3ec");
+  assert.equal(frameColor("1e2426", true), "#1e2426");
+  assert.equal(frameColor("zzz", false), "transparent");
+  assert.equal(frameColor(null, false), "transparent");
+});
