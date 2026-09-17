@@ -1,19 +1,19 @@
 {
   "race": "breaking3",
-  "fetchedAt": "2026-09-16T18:10:05.952Z",
+  "fetchedAt": "2026-09-17T17:02:12.613Z",
   "source": "notion:3d957119b440819f8b86f91e37450996",
   "metrics": {
     "projected_cap": {
       "metric": "Projected to hit 300",
-      "value": 134,
-      "display": "Day 134 (2026-12-12)",
-      "detail": "2026's demand curve scaled by the current 1.34x, crossing 300 on day 134 of 239."
+      "value": 135,
+      "display": "Day 135 (2026-12-13)",
+      "detail": "2026's demand curve scaled by the current 1.33x, crossing 300 on day 135 of 239."
     },
     "projected_race_day": {
       "metric": "Projected field on race day",
       "value": 300,
       "display": "300 of 300",
-      "detail": "2026's 250 scaled by the current 1.34x pace, capped at 300. Held flat past day 141 rather than extrapolated, so this is a floor."
+      "detail": "2026's 250 scaled by the current 1.33x pace, capped at 300. Held flat past day 141 rather than extrapolated, so this is a floor."
     },
     "prior_outcome": {
       "metric": "2026 outcome",
@@ -29,21 +29,21 @@
     },
     "pace": {
       "metric": "Pace vs 2026",
-      "value": 1.34,
-      "display": "1.34x",
-      "detail": "98 at day 47 in 2027 against 73 at day 47 in 2026."
+      "value": 1.33,
+      "display": "1.33x",
+      "detail": "101 at day 48 in 2027 against 76 at day 48 in 2026."
     },
     "percent": {
       "metric": "Field filled",
-      "value": 0.32666666666666666,
-      "display": "32.7%",
-      "detail": "202 places remaining against the 300 budget cap. Internal cap is 350 for no-show headroom; fill rate is deliberately tracked against 300."
+      "value": 0.33666666666666667,
+      "display": "33.7%",
+      "detail": "199 places remaining against the 300 budget cap. Internal cap is 350 for no-show headroom; fill rate is deliberately tracked against 300."
     },
     "registered": {
       "metric": "Registered now",
-      "value": 98,
-      "display": "98 of 300",
-      "detail": "Day 47 of 239 in the 2027 window."
+      "value": 101,
+      "display": "101 of 300",
+      "detail": "Day 48 of 239 in the 2027 window."
     }
   }
 }

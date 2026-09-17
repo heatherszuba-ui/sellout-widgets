@@ -1,13 +1,13 @@
 {
   "race": "microtq",
-  "fetchedAt": "2026-09-16T18:10:06.348Z",
+  "fetchedAt": "2026-09-17T17:02:12.973Z",
   "source": "notion:3d957119b44081529a8ffa6b310f6e99",
   "metrics": {
     "projected_race_day": {
       "metric": "Projected field on race day",
-      "value": 277,
-      "display": "277 of 300",
-      "detail": "2026's 102 scaled by the current 2.72x pace, capped at 300. Held flat past day 216 rather than extrapolated, so this is a floor."
+      "value": 286,
+      "display": "286 of 300",
+      "detail": "2026's 102 scaled by the current 2.8x pace, capped at 300. Held flat past day 216 rather than extrapolated, so this is a floor."
     },
     "prior_outcome": {
       "metric": "2026 outcome",
@@ -25,25 +25,25 @@
       "metric": "Projected to hit 300",
       "value": 0,
       "display": "Not on current pace",
-      "detail": "At 2.72x, 2026's curve projects 277 — short of 300. Needs 2.94x. Evidence ends at day 216."
+      "detail": "At 2.8x, 2026's curve projects 286 — short of 300. Needs 2.94x. Evidence ends at day 216."
     },
     "pace": {
       "metric": "Pace vs 2026",
-      "value": 2.72,
-      "display": "2.72x",
-      "detail": "68 at day 47 in 2027 against 25 at day 47 in 2026."
+      "value": 2.8,
+      "display": "2.8x",
+      "detail": "70 at day 48 in 2027 against 25 at day 48 in 2026."
     },
     "percent": {
       "metric": "Field filled",
-      "value": 0.22666666666666666,
-      "display": "22.7%",
-      "detail": "232 places remaining against the 300 budget cap. Internal cap is 350 for no-show headroom; fill rate is deliberately tracked against 300."
+      "value": 0.23333333333333334,
+      "display": "23.3%",
+      "detail": "230 places remaining against the 300 budget cap. Internal cap is 350 for no-show headroom; fill rate is deliberately tracked against 300."
     },
     "registered": {
       "metric": "Registered now",
-      "value": 68,
-      "display": "68 of 300",
-      "detail": "Day 47 of 240 in the 2027 window."
+      "value": 70,
+      "display": "70 of 300",
+      "detail": "Day 48 of 240 in the 2027 window."
     }
   }
 }
