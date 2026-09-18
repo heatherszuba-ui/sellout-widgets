@@ -1,6 +1,6 @@
 {
   "race": "breaking3",
-  "fetchedAt": "2026-09-17T17:02:12.613Z",
+  "fetchedAt": "2026-09-18T14:32:14.941Z",
   "source": "notion:3d957119b440819f8b86f91e37450996",
   "metrics": {
     "projected_cap": {
@@ -31,7 +31,7 @@
       "metric": "Pace vs 2026",
       "value": 1.33,
       "display": "1.33x",
-      "detail": "101 at day 48 in 2027 against 76 at day 48 in 2026."
+      "detail": "101 at day 49 in 2027 against 76 at day 49 in 2026."
     },
     "percent": {
       "metric": "Field filled",
@@ -43,7 +43,7 @@
       "metric": "Registered now",
       "value": 101,
       "display": "101 of 300",
-      "detail": "Day 48 of 239 in the 2027 window."
+      "detail": "Day 49 of 239 in the 2027 window."
     }
   }
 }
