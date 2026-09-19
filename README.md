@@ -118,3 +118,9 @@ npm run serve                  # http://localhost:8080/?race=breaking3
 Notion embeds are plain public URLs. Anyone with the widget link can see
 registration counts and pace. No names, emails, or tokens are ever in the
 page or the JSON.
+
+## Next-post countdown (`nextpost/`)
+
+Counts down to the next slot in the posting cadence: Tue 7:00 AM, Thu 7:00 AM, Sun 8:00 AM ET (DST-safe).
+Embed: `https://heatherszuba-ui.github.io/sellout-widgets/nextpost/?frame=green`
+Optional `slots=tue@07:00,thu@07:00,sun@08:00` to change the cadence. Tests: `node --test test/nextpost.test.mjs`.

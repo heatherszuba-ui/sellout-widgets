@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Next Post</title>
+  <link rel="stylesheet" href="../src/nextpost.css" />
+</head>
+<body>
+  <div id="app"></div>
+  <script type="module">
+    import { NextPost, parseSlots } from "../src/nextpost.js";
+    import { applyFrame } from "../src/frame.js";
+    applyFrame(location.search);
+    const slots = parseSlots(new URLSearchParams(location.search).get("slots"));
+    new NextPost(document.getElementById("app"), { slots }).start();
+  </script>
+</body>
+</html>
