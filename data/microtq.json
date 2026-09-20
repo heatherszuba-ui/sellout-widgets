@@ -1,13 +1,13 @@
 {
   "race": "microtq",
-  "fetchedAt": "2026-09-19T14:27:33.697Z",
+  "fetchedAt": "2026-09-20T01:12:18.568Z",
   "source": "notion:3d957119b44081529a8ffa6b310f6e99",
   "metrics": {
     "projected_race_day": {
       "metric": "Projected field on race day",
-      "value": 282,
-      "display": "282 of 300",
-      "detail": "2026's 102 scaled by the current 2.77x pace, capped at 300. Held flat past day 216 rather than extrapolated, so this is a floor."
+      "value": 272,
+      "display": "272 of 300",
+      "detail": "2026's 102 scaled by the current 2.67x pace, capped at 300. Held flat past day 216 rather than extrapolated, so this is a floor."
     },
     "prior_outcome": {
       "metric": "2026 outcome",
@@ -25,13 +25,13 @@
       "metric": "Projected to hit 300",
       "value": 0,
       "display": "Not on current pace",
-      "detail": "At 2.77x, 2026's curve projects 282 — short of 300. Needs 2.94x. Evidence ends at day 216."
+      "detail": "At 2.67x, 2026's curve projects 272 — short of 300. Needs 2.94x. Evidence ends at day 216."
     },
     "pace": {
       "metric": "Pace vs 2026",
-      "value": 2.77,
-      "display": "2.77x",
-      "detail": "72 at day 50 in 2027 against 26 at day 50 in 2026."
+      "value": 2.67,
+      "display": "2.67x",
+      "detail": "72 at day 51 in 2027 against 27 at day 51 in 2026."
     },
     "percent": {
       "metric": "Field filled",
@@ -43,7 +43,7 @@
       "metric": "Registered now",
       "value": 72,
       "display": "72 of 300",
-      "detail": "Day 50 of 240 in the 2027 window."
+      "detail": "Day 51 of 240 in the 2027 window."
     }
   }
 }

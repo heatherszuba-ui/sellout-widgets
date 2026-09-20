@@ -1,19 +1,19 @@
 {
   "race": "breaking3",
-  "fetchedAt": "2026-09-19T14:27:33.321Z",
+  "fetchedAt": "2026-09-20T01:12:18.308Z",
   "source": "notion:3d957119b440819f8b86f91e37450996",
   "metrics": {
     "projected_cap": {
       "metric": "Projected to hit 300",
-      "value": 134,
-      "display": "Day 134 (2026-12-12)",
-      "detail": "2026's demand curve scaled by the current 1.34x, crossing 300 on day 134 of 239."
+      "value": 136,
+      "display": "Day 136 (2026-12-14)",
+      "detail": "2026's demand curve scaled by the current 1.3x, crossing 300 on day 136 of 239."
     },
     "projected_race_day": {
       "metric": "Projected field on race day",
       "value": 300,
       "display": "300 of 300",
-      "detail": "2026's 250 scaled by the current 1.34x pace, capped at 300. Held flat past day 141 rather than extrapolated, so this is a floor."
+      "detail": "2026's 250 scaled by the current 1.3x pace, capped at 300. Held flat past day 141 rather than extrapolated, so this is a floor."
     },
     "prior_outcome": {
       "metric": "2026 outcome",
@@ -29,9 +29,9 @@
     },
     "pace": {
       "metric": "Pace vs 2026",
-      "value": 1.34,
-      "display": "1.34x",
-      "detail": "103 at day 50 in 2027 against 77 at day 50 in 2026."
+      "value": 1.3,
+      "display": "1.3x",
+      "detail": "103 at day 51 in 2027 against 79 at day 51 in 2026."
     },
     "percent": {
       "metric": "Field filled",
@@ -43,7 +43,7 @@
       "metric": "Registered now",
       "value": 103,
       "display": "103 of 300",
-      "detail": "Day 50 of 239 in the 2027 window."
+      "detail": "Day 51 of 239 in the 2027 window."
     }
   }
 }
