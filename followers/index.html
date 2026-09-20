@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Instagram Followers</title>
+  <link rel="stylesheet" href="../src/followers.css" />
+</head>
+<body>
+  <div id="app"></div>
+  <script type="module">
+    import { FollowerTile } from "../src/followers.js";
+    import { applyFrame } from "../src/frame.js";
+    applyFrame(location.search);
+    new FollowerTile(document.getElementById("app")).start();
+  </script>
+</body>
+</html>

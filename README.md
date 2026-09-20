@@ -124,3 +124,10 @@ page or the JSON.
 Counts down to the next slot in the posting cadence: Tue 7:00 AM, Thu 7:00 AM, Sun 8:00 AM ET (DST-safe).
 Embed: `https://heatherszuba-ui.github.io/sellout-widgets/nextpost/?frame=green`
 Optional `slots=tue@07:00,thu@07:00,sun@08:00` to change the cadence. Tests: `node --test test/nextpost.test.mjs`.
+
+## Instagram follower tile (`followers/`)
+
+Shows @handle, follower count, change over the last 7 days, and last update.
+Data: `scripts/fetch-instagram.mjs` → `data/instagram.json` + `data/instagram-history.json`, run hourly by `.github/workflows/instagram.yml`.
+Secrets: `IG_ACCESS_TOKEN` (required, Meta System User token), `IG_USER_ID` (optional; found automatically from the linked Facebook Page).
+Embed: `https://heatherszuba-ui.github.io/sellout-widgets/followers/?frame=green`

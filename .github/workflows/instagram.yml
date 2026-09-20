@@ -1,0 +1,43 @@
+name: Refresh Instagram followers
+
+on:
+  schedule:
+    # Hourly at :40 UTC, offset from the projections refresh at :20.
+    - cron: "40 * * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh
+  cancel-in-progress: false
+
+jobs:
+  instagram:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Fetch follower count
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+        run: node scripts/fetch-instagram.mjs
+
+      - name: Commit updated data
+        run: |
+          git config user.name "sellout-widgets bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/instagram*.json 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No data changes."
+          else
+            git commit -m "data: refresh instagram $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git pull --rebase
+            git push
+          fi

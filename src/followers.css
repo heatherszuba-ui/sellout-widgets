@@ -1,0 +1,44 @@
+/* Instagram follower tile — same card language as the other widgets. */
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap");
+
+:root {
+  --bg: #1e2426;
+  --ink: #f6f0da;
+  --gold: #e0b832;
+  --font: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --radius: 16px;
+}
+* { box-sizing: border-box; }
+html { color-scheme: light dark; }
+html, body { margin: 0; height: 100%; background: var(--frame, transparent); }
+#app { height: 100%; padding: 6px; container-type: inline-size; }
+
+.fw {
+  height: 100%;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 6px;
+  padding: 18px 22px 18px;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font);
+  border-radius: var(--radius);
+  -webkit-font-smoothing: antialiased;
+}
+.fw__label {
+  font-size: 12px; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; opacity: 0.75;
+}
+.fw__handle { font-size: 14px; font-weight: 500; color: var(--gold); min-height: 1em; }
+.fw__count {
+  font-size: 48px; line-height: 1; white-space: nowrap;
+  font-variant-numeric: tabular-nums; letter-spacing: -0.01em;
+}
+.fw__foot { display: flex; justify-content: space-between; gap: 8px; font-size: 12px; }
+.fw__delta { color: var(--gold); }
+.fw__delta[data-sign="-1"] { color: var(--ink); opacity: 0.8; }
+.fw__updated { opacity: 0.6; }
+
+@container (max-width: 260px) { .fw__count { font-size: 38px; } }
