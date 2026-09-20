@@ -1,8 +1,14 @@
 {
   "race": "microtq",
-  "fetchedAt": "2026-09-20T01:12:18.568Z",
+  "fetchedAt": "2026-09-20T12:24:55.961Z",
   "source": "notion:3d957119b44081529a8ffa6b310f6e99",
   "metrics": {
+    "pacers": {
+      "metric": "Pacers registered",
+      "value": 0,
+      "display": "0",
+      "detail": "Identified by the \"pacer2027\" coupon and excluded from every number above. 2026 is left as recorded and is not re-filtered. A 0 here when you expect pacers means the coupon code in races.ts no longer matches what they are using."
+    },
     "projected_race_day": {
       "metric": "Projected field on race day",
       "value": 272,
@@ -43,7 +49,7 @@
       "metric": "Registered now",
       "value": 72,
       "display": "72 of 300",
-      "detail": "Day 51 of 240 in the 2027 window."
+      "detail": "Runners only. Day 51 of 240 in the 2027 window. 0 pacers excluded, so 72 people are registered in total."
     }
   }
 }
