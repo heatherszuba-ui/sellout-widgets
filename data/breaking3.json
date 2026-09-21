@@ -1,25 +1,25 @@
 {
   "race": "breaking3",
-  "fetchedAt": "2026-09-20T12:24:55.634Z",
+  "fetchedAt": "2026-09-21T23:18:57.740Z",
   "source": "notion:3d957119b440819f8b86f91e37450996",
   "metrics": {
     "pacers": {
       "metric": "Pacers registered",
-      "value": 1,
-      "display": "1",
+      "value": 2,
+      "display": "2",
       "detail": "Identified by the \"pacer2027\" coupon and excluded from every number above. 2026 is left as recorded and is not re-filtered. A 0 here when you expect pacers means the coupon code in races.ts no longer matches what they are using."
     },
     "projected_cap": {
       "metric": "Projected to hit 300",
       "value": 137,
       "display": "Day 137 (2026-12-15)",
-      "detail": "2026's demand curve scaled by the current 1.29x, crossing 300 on day 137 of 239."
+      "detail": "2026's demand curve scaled by the current 1.27x, crossing 300 on day 137 of 239."
     },
     "projected_race_day": {
       "metric": "Projected field on race day",
       "value": 300,
       "display": "300 of 300",
-      "detail": "2026's 250 scaled by the current 1.29x pace, capped at 300. Held flat past day 141 rather than extrapolated, so this is a floor."
+      "detail": "2026's 250 scaled by the current 1.27x pace, capped at 300. Held flat past day 141 rather than extrapolated, so this is a floor."
     },
     "prior_outcome": {
       "metric": "2026 outcome",
@@ -35,9 +35,9 @@
     },
     "pace": {
       "metric": "Pace vs 2026",
-      "value": 1.29,
-      "display": "1.29x",
-      "detail": "102 at day 51 in 2027 against 79 at day 51 in 2026."
+      "value": 1.27,
+      "display": "1.27x",
+      "detail": "102 at day 52 in 2027 against 80 at day 52 in 2026."
     },
     "percent": {
       "metric": "Field filled",
@@ -49,7 +49,7 @@
       "metric": "Registered now",
       "value": 102,
       "display": "102 of 300",
-      "detail": "Runners only. Day 51 of 239 in the 2027 window. 1 pacer excluded, so 103 people are registered in total."
+      "detail": "Runners only. Day 52 of 239 in the 2027 window. 2 pacers excluded, so 104 people are registered in total."
     }
   }
 }
