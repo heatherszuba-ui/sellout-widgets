@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Race Countdown</title>
+  <link rel="stylesheet" href="../src/countdown.css" />
+</head>
+<body>
+  <div id="app"></div>
+  <script type="module">
+    import { RaceCountdown, CountdownConfig } from "../src/countdown.js";
+    import { applyFrame } from "../src/frame.js";
+
+    applyFrame(location.search);
+
+    new RaceCountdown(document.getElementById("app"), {
+      config: CountdownConfig.fromSearch(location.search),
+      logoSrc: "../assets/the-micro-logo-horizontal-gold.png",
+    }).start();
+  </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+/* Race countdown — same card language as the sell-out and greeting widgets. */
+
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap");
+
+:root {
+  --bg: #1e2426;
+  --ink: #f6f0da;
+  --gold: #e0b832;
+  --font: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --radius: 16px;
+}
+
+* { box-sizing: border-box; }
+
+/* Match the embedding page's colour scheme so the browser does not paint an
+   opaque backdrop behind the iframe. */
+html { color-scheme: light dark; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: var(--frame, transparent); /* see src/frame.js */
+}
+
+#app {
+  height: 100%;
+  padding: 6px;
+  container-type: inline-size;
+}
+
+.rc {
+  height: 100%;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 20px 24px 22px;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font);
+  border-radius: var(--radius);
+  -webkit-font-smoothing: antialiased;
+}
+
+.rc__head { display: flex; align-items: center; }
+
+.rc__logo { height: 30px; width: auto; display: block; }
+
+.rc__body {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.rc__digits {
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+  color: var(--gold);
+  white-space: nowrap;
+}
+
+.rc__unit {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.rc__label {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.rc__sub,
+.rc__detail {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  opacity: 0.5;
+  margin-top: 2px;
+}
+
+@container (max-width: 360px) {
+  .rc__digits { font-size: 48px; }
+  .rc__logo { height: 26px; }
+}
