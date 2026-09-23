@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Photo of the Day</title>
+  <link rel="preconnect" href="https://res.cloudinary.com" />
+  <link rel="stylesheet" href="../src/photo.css" />
+</head>
+<body>
+  <div id="app"></div>
+  <script type="module">
+    import { PhotoOfTheDay } from "../src/photo.js";
+    import { applyFrame } from "../src/frame.js";
+
+    applyFrame(location.search);
+
+    new PhotoOfTheDay(document.getElementById("app"), {
+      dataUrl: "../data/photos.json",
+      search: location.search,
+    }).start();
+  </script>
+</body>
+</html>

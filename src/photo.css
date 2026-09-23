@@ -1,0 +1,100 @@
+/* Photo of the day — same card language as the sell-out, greeting and
+   countdown widgets. */
+
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap");
+
+:root {
+  --bg: #1e2426;
+  --ink: #f6f0da;
+  --gold: #e0b832;
+  --font: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --radius: 16px;
+}
+
+* { box-sizing: border-box; }
+
+html { color-scheme: light dark; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: var(--frame, transparent); /* see src/frame.js */
+}
+
+#app {
+  height: 100%;
+  padding: 6px;
+}
+
+.pod {
+  height: 100%;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 10px 12px;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font);
+  border-radius: var(--radius);
+  -webkit-font-smoothing: antialiased;
+}
+
+.pod__frame {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  border-radius: calc(var(--radius) - 6px);
+  overflow: hidden;
+  background: #2a3133;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pod__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* safety net; Cloudinary already crops to the box */
+  opacity: 0;
+  transition: opacity 400ms ease;
+}
+
+.pod__img.is-loaded { opacity: 1; }
+
+.pod__foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding: 0 6px;
+}
+
+.pod__label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pod__date {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  white-space: nowrap;
+}
+
+.pod__msg {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  opacity: 0.5;
+  padding: 16px;
+  text-align: center;
+}

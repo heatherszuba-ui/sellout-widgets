@@ -8,6 +8,7 @@
  * we match the colour instead.
  *
  *   ?frame=green     Notion's green callout (dark #263d30 / light #edf3ec)
+ *   ?frame=blue      Notion's blue callout  (dark #233850 / light #e5f2fc)
  *   ?frame=1e2426    any hex, used in both light and dark
  *   (omitted)        transparent — right for embeds on the plain page
  *
@@ -16,6 +17,8 @@
  */
 const PRESETS = {
   green: { dark: "#263d30", light: "#edf3ec" },
+  // Measured on About The Micro, 2026-09-23.
+  blue: { dark: "#233850", light: "#e5f2fc" },
 };
 
 const HEX = /^[0-9a-f]{3}([0-9a-f]{3})?$/i;

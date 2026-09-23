@@ -131,3 +131,26 @@ Shows @handle, follower count, change over the last 7 days, and last update.
 Data: `scripts/fetch-instagram.mjs` → `data/instagram.json` + `data/instagram-history.json`, run hourly by `.github/workflows/instagram.yml`.
 Secrets: `IG_ACCESS_TOKEN` (required, Meta System User token), `IG_USER_ID` (optional; found automatically from the linked Facebook Page).
 Embed: `https://heatherszuba-ui.github.io/sellout-widgets/followers/?frame=green`
+
+## Photo of the day (`photo/`)
+
+One Micro photo a day, picked at random from the Cloudinary folder
+`brands/themicro/photos/web-assets`. Changes at midnight Eastern; everyone
+sees the same photo. Every photo is shown once before any repeats, and never
+the same photo two days running. Add or remove images in the folder and the
+widget follows — no names, counts or naming conventions are hard-coded.
+
+Embed: `https://heatherszuba-ui.github.io/sellout-widgets/photo/?frame=blue`
+Optional `label=` (footer text, max 24 chars). The photo is cropped (Cloudinary
+`g_auto`) to fill whatever size the embed is, so drag the embed's height in
+Notion to change the shape.
+
+Data: `scripts/fetch-photos.mjs` → `data/photos.json`, run daily at 03:10 UTC by
+`.github/workflows/photos.yml` (or Actions → *Refresh photo list* → Run workflow).
+Secret: `CLOUDINARY_URL` = `cloudinary://<api_key>:<api_secret>@<cloud_name>`
+(Cloudinary → Settings → API Keys → "API environment variable"). To point at a
+different folder, set `PHOTO_FOLDER` in the workflow's `env`.
+Logic: `src/photo-model.js`; tests: `test/photo.test.mjs`.
+
+`frame=blue` (Notion's blue callout, dark #233850 / light #e5f2fc) was added
+to `src/frame.js` alongside `green`.

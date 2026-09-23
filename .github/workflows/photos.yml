@@ -1,0 +1,47 @@
+name: Refresh photo list
+
+on:
+  schedule:
+    # Daily at 03:10 UTC, before midnight Eastern (04:00/05:00 UTC), so photos
+    # added during the day are in the list when the widget picks tomorrow's.
+    - cron: "10 3 * * *"
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths:
+      - "scripts/fetch-photos.mjs"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh
+  cancel-in-progress: false
+
+jobs:
+  photos:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: List photos in Cloudinary folder
+        env:
+          CLOUDINARY_URL: ${{ secrets.CLOUDINARY_URL }}
+        run: node scripts/fetch-photos.mjs
+
+      - name: Commit updated data
+        run: |
+          git config user.name "sellout-widgets bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/photos.json 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No data changes."
+          else
+            git commit -m "data: refresh photo list $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git pull --rebase
+            git push
+          fi
