@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import {
   dateKey, dayNumber, shortDate, pickForDay, pickForDate, imageUrl, bucket, parsePhotoData,
 } from "../src/photo-model.js";
-import { parseCloudinaryUrl, toPhoto } from "../scripts/fetch-photos.mjs";
+import { parseCloudinaryUrl, toPhoto, hasPlaceholder } from "../scripts/fetch-photos.mjs";
 
 const make = (n, prefix = "p") =>
   Array.from({ length: n }, (_, i) => ({ id: `${prefix}${String(i).padStart(3, "0")}` }));
@@ -120,4 +120,11 @@ test("frame presets include Notion's blue callout", async () => {
   assert.equal(frameColor("blue", false), "#233850");
   assert.equal(frameColor("blue", true), "#e5f2fc");
   assert.equal(frameColor("green", false), "#263d30");
+});
+
+test("CLOUDINARY_URL pasted with its prefix or placeholders", () => {
+  const c = parseCloudinaryUrl("CLOUDINARY_URL=cloudinary://123:abc@dfaiiaxym");
+  assert.deepEqual(c, { key: "123", secret: "abc", cloud: "dfaiiaxym" });
+  assert.equal(hasPlaceholder(c), false);
+  assert.equal(hasPlaceholder(parseCloudinaryUrl("cloudinary://<your_api_key>:<your_api_secret>@dfaiiaxym")), true);
 });

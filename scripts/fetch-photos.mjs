@@ -27,9 +27,17 @@ const outFile = resolve(here, "..", "data", "photos.json");
 const FOLDER = (process.env.PHOTO_FOLDER || "brands/themicro/photos/web-assets").replace(/^\/+|\/+$/g, "");
 
 export function parseCloudinaryUrl(value) {
-  const m = /^cloudinary:\/\/([^:]+):([^@]+)@(.+)$/.exec(String(value ?? "").trim());
+  // Accept the line exactly as Cloudinary shows it, with or without the
+  // leading "CLOUDINARY_URL=" and surrounding quotes.
+  const raw = String(value ?? "").trim().replace(/^CLOUDINARY_URL\s*=\s*/i, "").replace(/^["']|["']$/g, "");
+  const m = /^cloudinary:\/\/([^:]+):([^@]+)@(.+)$/.exec(raw);
   if (!m) return null;
   return { key: m[1], secret: m[2], cloud: m[3] };
+}
+
+/** True when Cloudinary's <your_api_key> / <your_api_secret> placeholders were left in. */
+export function hasPlaceholder(creds) {
+  return /[<>]|your_api/i.test(`${creds.key}:${creds.secret}`);
 }
 
 /** Search API resource → the small record the widget needs. */
@@ -74,9 +82,15 @@ async function searchAll({ key, secret, cloud }) {
 
 async function main() {
   const creds = parseCloudinaryUrl(process.env.CLOUDINARY_URL);
-  if (!creds) {
+  if (!process.env.CLOUDINARY_URL) {
     console.log("CLOUDINARY_URL not set yet. Skipping.");
     return;
+  }
+  if (!creds) {
+    throw new Error("CLOUDINARY_URL is set but not in the form cloudinary://<api_key>:<api_secret>@<cloud_name>.");
+  }
+  if (hasPlaceholder(creds)) {
+    throw new Error("CLOUDINARY_URL still contains the <your_api_key>/<your_api_secret> placeholders. Replace them with the real API Key and API Secret.");
   }
   const resources = await searchAll(creds);
   const photos = resources
