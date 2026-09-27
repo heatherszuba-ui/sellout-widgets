@@ -1,8 +1,8 @@
 {
   "cloud": "dfaiiaxym",
   "folder": "brands/themicro/photos/web-assets",
-  "fetchedAt": "2026-09-26T08:30:40.771Z",
-  "count": 42,
+  "fetchedAt": "2026-09-27T09:09:50.651Z",
+  "count": 43,
   "photos": [
     {
       "id": "brands/themicro/photos/web-assets/MeteredExposure-McKirdy2026-213",
@@ -24,6 +24,13 @@
       "width": 2581,
       "height": 3872,
       "alt": ""
+    },
+    {
+      "id": "brands/themicro/photos/web-assets/blog-boston-2027-cut-off-076",
+      "version": 1790498538,
+      "width": 1778,
+      "height": 1000,
+      "alt": "Two Breaking 3 finishers approach the line at Rockland Lake as the race clock reads 2:59:09"
     },
     {
       "id": "brands/themicro/photos/web-assets/gruen-microtq-2025-finish-line",
