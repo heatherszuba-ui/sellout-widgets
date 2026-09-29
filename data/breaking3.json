@@ -1,6 +1,6 @@
 {
   "race": "breaking3",
-  "fetchedAt": "2026-09-28T22:03:53.530Z",
+  "fetchedAt": "2026-09-29T08:34:40.329Z",
   "source": "notion:3d957119b440819f8b86f91e37450996",
   "metrics": {
     "pacers": {
@@ -37,7 +37,7 @@
       "metric": "Pace vs 2026",
       "value": 1.14,
       "display": "1.14x",
-      "detail": "104 at day 59 in 2027 against 91 at day 59 in 2026."
+      "detail": "104 at day 60 in 2027 against 91 at day 60 in 2026."
     },
     "percent": {
       "metric": "Field filled",
@@ -49,7 +49,7 @@
       "metric": "Registered now",
       "value": 104,
       "display": "104 of 300",
-      "detail": "Runners only. Day 59 of 239 in the 2027 window. 2 pacers excluded, so 106 people are registered in total."
+      "detail": "Runners only. Day 60 of 239 in the 2027 window. 2 pacers excluded, so 106 people are registered in total."
     }
   }
 }
