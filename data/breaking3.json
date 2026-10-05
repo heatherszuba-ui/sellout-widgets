@@ -1,6 +1,6 @@
 {
   "race": "breaking3",
-  "fetchedAt": "2026-10-04T12:25:11.815Z",
+  "fetchedAt": "2026-10-05T16:04:01.082Z",
   "source": "notion:3d957119b440819f8b86f91e37450996",
   "metrics": {
     "pacers": {
@@ -13,12 +13,12 @@
       "metric": "Projected to hit 300",
       "value": 0,
       "display": "Not on current pace",
-      "detail": "At 1.18x, 2026's curve projects 296 — short of 300. Needs 1.2x. Evidence ends at day 141."
+      "detail": "At 1.18x, 2026's curve projects 295 — short of 300. Needs 1.2x. Evidence ends at day 141."
     },
     "projected_race_day": {
       "metric": "Projected field on race day",
-      "value": 296,
-      "display": "296 of 300",
+      "value": 295,
+      "display": "295 of 300",
       "detail": "2026's 250 scaled by the current 1.18x pace, capped at 300. Held flat past day 141 rather than extrapolated, so this is a floor."
     },
     "prior_outcome": {
@@ -37,19 +37,19 @@
       "metric": "Pace vs 2026",
       "value": 1.18,
       "display": "1.18x",
-      "detail": "116 at day 65 in 2027 against 98 at day 65 in 2026."
+      "detail": "117 at day 66 in 2027 against 99 at day 66 in 2026."
     },
     "percent": {
       "metric": "Field filled",
-      "value": 0.38666666666666666,
-      "display": "38.7%",
-      "detail": "184 places remaining against the 300 budget cap. Internal cap is 350 for no-show headroom; fill rate is deliberately tracked against 300."
+      "value": 0.39,
+      "display": "39%",
+      "detail": "183 places remaining against the 300 budget cap. Internal cap is 350 for no-show headroom; fill rate is deliberately tracked against 300."
     },
     "registered": {
       "metric": "Registered now",
-      "value": 116,
-      "display": "116 of 300",
-      "detail": "Runners only. Day 65 of 239 in the 2027 window. 2 pacers excluded, so 118 people are registered in total."
+      "value": 117,
+      "display": "117 of 300",
+      "detail": "Runners only. Day 66 of 239 in the 2027 window. 2 pacers excluded, so 119 people are registered in total."
     }
   }
 }
