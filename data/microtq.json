@@ -1,6 +1,6 @@
 {
   "race": "microtq",
-  "fetchedAt": "2026-10-07T08:43:07.310Z",
+  "fetchedAt": "2026-10-08T09:01:35.505Z",
   "source": "notion:3d957119b44081529a8ffa6b310f6e99",
   "metrics": {
     "pacers": {
@@ -37,7 +37,7 @@
       "metric": "Pace vs 2026",
       "value": 2.47,
       "display": "2.47x",
-      "detail": "84 at day 68 in 2027 against 34 at day 68 in 2026."
+      "detail": "84 at day 69 in 2027 against 34 at day 69 in 2026."
     },
     "percent": {
       "metric": "Field filled",
@@ -49,7 +49,7 @@
       "metric": "Registered now",
       "value": 84,
       "display": "84 of 300",
-      "detail": "Runners only. Day 68 of 240 in the 2027 window. 1 pacer excluded, so 85 people are registered in total."
+      "detail": "Runners only. Day 69 of 240 in the 2027 window. 1 pacer excluded, so 85 people are registered in total."
     }
   }
 }
