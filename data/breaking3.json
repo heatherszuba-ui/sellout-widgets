@@ -1,6 +1,6 @@
 {
   "race": "breaking3",
-  "fetchedAt": "2026-10-13T11:50:43.543Z",
+  "fetchedAt": "2026-10-14T07:40:45.063Z",
   "source": "notion:3d957119b440819f8b86f91e37450996",
   "metrics": {
     "pacers": {
@@ -11,15 +11,15 @@
     },
     "projected_cap": {
       "metric": "Projected to hit 300",
-      "value": 138,
-      "display": "Day 138 (2026-12-16)",
-      "detail": "2026's demand curve scaled by the current 1.26x, crossing 300 on day 138 of 239."
+      "value": 139,
+      "display": "Day 139 (2026-12-17)",
+      "detail": "2026's demand curve scaled by the current 1.24x, crossing 300 on day 139 of 239."
     },
     "projected_race_day": {
       "metric": "Projected field on race day",
       "value": 300,
       "display": "300 of 300",
-      "detail": "2026's 250 scaled by the current 1.26x pace, capped at 300. Held flat past day 141 rather than extrapolated, so this is a floor."
+      "detail": "2026's 250 scaled by the current 1.24x pace, capped at 300. Held flat past day 141 rather than extrapolated, so this is a floor."
     },
     "prior_outcome": {
       "metric": "2026 outcome",
@@ -35,21 +35,21 @@
     },
     "pace": {
       "metric": "Pace vs 2026",
-      "value": 1.26,
-      "display": "1.26x",
-      "detail": "139 at day 74 in 2027 against 110 at day 74 in 2026."
+      "value": 1.24,
+      "display": "1.24x",
+      "detail": "143 at day 75 in 2027 against 115 at day 75 in 2026."
     },
     "percent": {
       "metric": "Field filled",
-      "value": 0.4633333333333333,
-      "display": "46.3%",
-      "detail": "161 places remaining against the 300 budget cap. Internal cap is 350 for no-show headroom; fill rate is deliberately tracked against 300."
+      "value": 0.4766666666666667,
+      "display": "47.7%",
+      "detail": "157 places remaining against the 300 budget cap. Internal cap is 350 for no-show headroom; fill rate is deliberately tracked against 300."
     },
     "registered": {
       "metric": "Registered now",
-      "value": 139,
-      "display": "139 of 300",
-      "detail": "Runners only. Day 74 of 239 in the 2027 window. 3 pacers excluded, so 142 people are registered in total."
+      "value": 143,
+      "display": "143 of 300",
+      "detail": "Runners only. Day 75 of 239 in the 2027 window. 3 pacers excluded, so 146 people are registered in total."
     }
   }
 }
