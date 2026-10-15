@@ -1,19 +1,19 @@
 {
   "race": "microtq",
-  "fetchedAt": "2026-10-14T07:40:45.340Z",
+  "fetchedAt": "2026-10-15T11:34:04.560Z",
   "source": "notion:3d957119b44081529a8ffa6b310f6e99",
   "metrics": {
     "pacers": {
       "metric": "Pacers registered",
-      "value": 2,
-      "display": "2",
+      "value": 3,
+      "display": "3",
       "detail": "Identified by the \"pacer2027\" coupon and excluded from every number above. 2026 is left as recorded and is not re-filtered. A 0 here when you expect pacers means the coupon code in races.ts no longer matches what they are using."
     },
     "projected_race_day": {
       "metric": "Projected field on race day",
-      "value": 238,
-      "display": "238 of 300",
-      "detail": "2026's 102 scaled by the current 2.33x pace, capped at 300. Held flat past day 216 rather than extrapolated, so this is a floor."
+      "value": 240,
+      "display": "240 of 300",
+      "detail": "2026's 102 scaled by the current 2.35x pace, capped at 300. Held flat past day 216 rather than extrapolated, so this is a floor."
     },
     "prior_outcome": {
       "metric": "2026 outcome",
@@ -31,25 +31,25 @@
       "metric": "Projected to hit 300",
       "value": 0,
       "display": "Not on current pace",
-      "detail": "At 2.33x, 2026's curve projects 238 — short of 300. Needs 2.94x. Evidence ends at day 216."
+      "detail": "At 2.35x, 2026's curve projects 240 — short of 300. Needs 2.94x. Evidence ends at day 216."
     },
     "pace": {
       "metric": "Pace vs 2026",
-      "value": 2.33,
-      "display": "2.33x",
-      "detail": "91 at day 75 in 2027 against 39 at day 75 in 2026."
+      "value": 2.35,
+      "display": "2.35x",
+      "detail": "94 at day 76 in 2027 against 40 at day 76 in 2026."
     },
     "percent": {
       "metric": "Field filled",
-      "value": 0.30333333333333334,
-      "display": "30.3%",
-      "detail": "209 places remaining against the 300 budget cap. Internal cap is 350 for no-show headroom; fill rate is deliberately tracked against 300."
+      "value": 0.31333333333333335,
+      "display": "31.3%",
+      "detail": "206 places remaining against the 300 budget cap. Internal cap is 350 for no-show headroom; fill rate is deliberately tracked against 300."
     },
     "registered": {
       "metric": "Registered now",
-      "value": 91,
-      "display": "91 of 300",
-      "detail": "Runners only. Day 75 of 240 in the 2027 window. 2 pacers excluded, so 93 people are registered in total."
+      "value": 94,
+      "display": "94 of 300",
+      "detail": "Runners only. Day 76 of 240 in the 2027 window. 3 pacers excluded, so 97 people are registered in total."
     }
   }
 }
