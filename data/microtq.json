@@ -1,6 +1,6 @@
 {
   "race": "microtq",
-  "fetchedAt": "2026-10-22T07:37:59.621Z",
+  "fetchedAt": "2026-10-23T07:35:04.707Z",
   "source": "notion:3d957119b44081529a8ffa6b310f6e99",
   "metrics": {
     "pacers": {
@@ -11,9 +11,9 @@
     },
     "projected_race_day": {
       "metric": "Projected field on race day",
-      "value": 215,
-      "display": "215 of 300",
-      "detail": "2026's 102 scaled by the current 2.1x pace, capped at 300. Held flat past day 216 rather than extrapolated, so this is a floor."
+      "value": 210,
+      "display": "210 of 300",
+      "detail": "2026's 102 scaled by the current 2.06x pace, capped at 300. Held flat past day 216 rather than extrapolated, so this is a floor."
     },
     "prior_outcome": {
       "metric": "2026 outcome",
@@ -31,13 +31,13 @@
       "metric": "Projected to hit 300",
       "value": 0,
       "display": "Not on current pace",
-      "detail": "At 2.1x, 2026's curve projects 215 — short of 300. Needs 2.94x. Evidence ends at day 216."
+      "detail": "At 2.06x, 2026's curve projects 210 — short of 300. Needs 2.94x. Evidence ends at day 216."
     },
     "pace": {
       "metric": "Pace vs 2026",
-      "value": 2.1,
-      "display": "2.1x",
-      "detail": "101 at day 83 in 2027 against 48 at day 83 in 2026."
+      "value": 2.06,
+      "display": "2.06x",
+      "detail": "101 at day 84 in 2027 against 49 at day 84 in 2026."
     },
     "percent": {
       "metric": "Field filled",
@@ -49,7 +49,7 @@
       "metric": "Registered now",
       "value": 101,
       "display": "101 of 300",
-      "detail": "Runners only. Day 83 of 240 in the 2027 window. 3 pacers excluded, so 104 people are registered in total."
+      "detail": "Runners only. Day 84 of 240 in the 2027 window. 3 pacers excluded, so 104 people are registered in total."
     }
   }
 }
