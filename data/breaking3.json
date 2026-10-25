@@ -1,6 +1,6 @@
 {
   "race": "breaking3",
-  "fetchedAt": "2026-10-24T11:05:57.404Z",
+  "fetchedAt": "2026-10-25T11:35:58.044Z",
   "source": "notion:3d957119b440819f8b86f91e37450996",
   "metrics": {
     "pacers": {
@@ -37,19 +37,19 @@
       "metric": "Pace vs 2026",
       "value": 1.19,
       "display": "1.19x",
-      "detail": "170 at day 85 in 2027 against 143 at day 85 in 2026."
+      "detail": "172 at day 86 in 2027 against 145 at day 86 in 2026."
     },
     "percent": {
       "metric": "Field filled",
-      "value": 0.5666666666666667,
-      "display": "56.7%",
-      "detail": "130 places remaining against the 300 budget cap. Internal cap is 350 for no-show headroom; fill rate is deliberately tracked against 300."
+      "value": 0.5733333333333334,
+      "display": "57.3%",
+      "detail": "128 places remaining against the 300 budget cap. Internal cap is 350 for no-show headroom; fill rate is deliberately tracked against 300."
     },
     "registered": {
       "metric": "Registered now",
-      "value": 170,
-      "display": "170 of 300",
-      "detail": "Runners only. Day 85 of 239 in the 2027 window. 3 pacers excluded, so 173 people are registered in total."
+      "value": 172,
+      "display": "172 of 300",
+      "detail": "Runners only. Day 86 of 239 in the 2027 window. 3 pacers excluded, so 175 people are registered in total."
     }
   }
 }
