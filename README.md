@@ -154,3 +154,23 @@ Logic: `src/photo-model.js`; tests: `test/photo.test.mjs`.
 
 `frame=blue` (Notion's blue callout, dark #233850 / light #e5f2fc) was added
 to `src/frame.js` alongside `green`.
+
+## Sponsorship total (`sponsorship/`)
+
+One number: money secured for the current cycle (2027). It is
+Signed value on every Sponsorship Lead Tracker row with Status = Signed, plus
+Amount on every micrOTQ and Breaking 3 donation with Cycle = 2027. A small line
+underneath splits it into sponsors and donations.
+
+Embed: `https://heatherszuba-ui.github.io/sellout-widgets/sponsorship/?frame=green`
+Optional `label=` (top label, max 28 chars, default "Secured · 2027").
+
+Data: `scripts/fetch-sponsorship.mjs` → `data/sponsorship.json`, run hourly at
+:40 by `.github/workflows/sponsorship.yml` (or Actions → *Refresh sponsorship
+total* → Run workflow). Uses the existing `NOTION_TOKEN` secret; that
+integration must be connected (••• → Connections) to the Lead Tracker and both
+donation databases. To change the cycle, edit `CYCLE` in
+`src/sponsorship-model.js`. Tests: `test/sponsorship.test.mjs`.
+
+Note: `data/sponsorship.json` is public like the rest of this repo, so the
+total and its two parts are visible to anyone who looks.

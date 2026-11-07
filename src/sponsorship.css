@@ -1,0 +1,42 @@
+/* Sponsorship total tile — same card language as the other widgets. */
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap");
+
+:root {
+  --bg: #1e2426;
+  --ink: #f6f0da;
+  --gold: #e0b832;
+  --font: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --radius: 16px;
+}
+* { box-sizing: border-box; }
+html { color-scheme: light dark; }
+html, body { margin: 0; height: 100%; background: var(--frame, transparent); }
+#app { height: 100%; padding: 6px; container-type: inline-size; }
+
+.sp {
+  height: 100%;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 6px;
+  padding: 18px 22px;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font);
+  border-radius: var(--radius);
+  -webkit-font-smoothing: antialiased;
+}
+.sp__label {
+  font-size: 12px; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; opacity: 0.75;
+}
+.sp__total {
+  font-size: 48px; line-height: 1; white-space: nowrap; color: var(--gold);
+  font-variant-numeric: tabular-nums; letter-spacing: -0.01em;
+}
+.sp__parts { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 12px; opacity: 0.85; }
+.sp__parts b { font-weight: 500; }
+.sp__updated { font-size: 12px; opacity: 0.6; }
+
+@container (max-width: 260px) { .sp__total { font-size: 38px; } }
